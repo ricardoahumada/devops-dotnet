@@ -5,19 +5,13 @@
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds
  */
 plugins {
-  id "com.ullink.msbuild" version "2.18"
-}
- 
-msbuild {
-  // either a solution file
-  solutionFile = 'unit-testing-using-nunit.sln'
-  
-  targets = ['Clean', 'Rebuild']
- 
-  destinationDir = 'build/msbuild/bin'
+    id 'com.ullink.msbuild' version '3.1'
 }
 
 import com.ullink.Msbuild
  
-task buildSolution(type: Msbuild) {  
+task buildSolution(type: Msbuild) { 
+  solutionFile = 'PrimeService/PrimeService.csproj'
+  targets = ['Clean', 'Rebuild']
+  destinationDir = 'build/msbuild/bin'
 }
