@@ -1,0 +1,1 @@
+D:\Shared\MyFiles\Labs\net\unit-testing-using-dotnet-test\.sonarqube\out\2
