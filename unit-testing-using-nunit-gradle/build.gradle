@@ -12,6 +12,7 @@ import com.ullink.Msbuild
  
 task buildSolution(type: Msbuild) { 
   solutionFile = 'PrimeService/PrimeService.csproj'
-  targets = ['Clean', 'Rebuild']
+  targets = ['Clean','Restore', 'Build']
   destinationDir = 'build/msbuild/bin'
+  msbuildDir='c:/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/MSBuild/15.0/Bin'
 }
