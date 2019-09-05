@@ -1,0 +1,22 @@
+apply plugin: "java"
+  repositories {
+    maven {
+        url "http://localhost:8081/repository/maven-public/"
+        credentials {
+            username = 'ricardo'
+            password = 'izaskun7'
+        }
+    }
+}
+configurations {
+    zips
+}
+
+dependencies {
+    zips "netmind:localfile:0.0.0.1-SNAPSHOT.zip@zip"
+}
+
+task copyZips(type: Copy) {
+    from configurations.zips
+    into "$buildDir/zip-down"
+}
