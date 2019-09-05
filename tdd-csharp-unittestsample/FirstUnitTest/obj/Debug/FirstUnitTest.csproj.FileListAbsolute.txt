@@ -1,0 +1,2 @@
+D:\Shared\MyFiles\Labs\dotnet\tdd-csharp-unittestsample\FirstUnitTest\obj\Debug\FirstUnitTest.csprojAssemblyReference.cache
+D:\Shared\MyFiles\Labs\dotnet\tdd-csharp-unittestsample\FirstUnitTest\obj\Debug\FirstUnitTest.csproj.CoreCompileInputs.cache
