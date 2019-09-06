@@ -13,7 +13,7 @@ configurations {
 }
 
 dependencies {
-    zips "netmind:localfile:0.0.0.1-SNAPSHOT.zip@zip"
+    zips "netmind:uploadfile:1.0.0@zip"
 }
 
 task copyZips(type: Copy) {

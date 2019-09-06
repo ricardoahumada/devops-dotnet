@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
-  <info organisation="netmind" module="gradle-upload-simple-file" revision="1.0.0.SNAPSHOT" status="integration" publication="20190906064248"/>
-  <configurations>
-    <conf name="archives" visibility="public"/>
-    <conf name="default" visibility="public"/>
-  </configurations>
-  <publications/>
-</ivy-module>
