@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <NuspecFile>dll-proj.csproj.nuspec</NuspecFile>
+    <NuspecFile>my-cpp-libraries.nuspec</NuspecFile>
   </PropertyGroup>
 </Project>

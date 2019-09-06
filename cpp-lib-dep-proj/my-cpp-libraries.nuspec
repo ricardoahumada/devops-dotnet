@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>cpp-proj.csproj</id>
+    <id>my-cpp-libraries</id>
     <version>1.0.0</version>
     <authors>ricardo</authors>
     <owners>ricardo</owners>
@@ -18,6 +18,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="build/lib/main/release/*.*" target="lib\" />
+    <file src="build\lib\main\release\*.*" target="lib\" />
   </files>
 </package>

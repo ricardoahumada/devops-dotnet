@@ -1,6 +1,0 @@
-D:\Shared\MyFiles\Labs\dotnet\tdd-csharp-unittestsample\MoneySamples\bin\Debug\MoneySamples.dll
-D:\Shared\MyFiles\Labs\dotnet\tdd-csharp-unittestsample\MoneySamples\bin\Debug\MoneySamples.pdb
-D:\Shared\MyFiles\Labs\dotnet\tdd-csharp-unittestsample\MoneySamples\obj\Debug\MoneySamples.csprojAssemblyReference.cache
-D:\Shared\MyFiles\Labs\dotnet\tdd-csharp-unittestsample\MoneySamples\obj\Debug\MoneySamples.csproj.CoreCompileInputs.cache
-D:\Shared\MyFiles\Labs\dotnet\tdd-csharp-unittestsample\MoneySamples\obj\Debug\MoneySamples.dll
-D:\Shared\MyFiles\Labs\dotnet\tdd-csharp-unittestsample\MoneySamples\obj\Debug\MoneySamples.pdb
