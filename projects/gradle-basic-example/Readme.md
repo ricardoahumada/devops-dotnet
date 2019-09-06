@@ -1,5 +1,5 @@
-Examples tasks:
+##Examples tasks:
 
-gradle copy
-gradle zip
-gradle copy zip
+- gradle copy
+- gradle zip
+- gradle copy zip

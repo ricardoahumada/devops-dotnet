@@ -1,1 +1,1 @@
-Execute: gradle upload
+- Execute: gradle publish
