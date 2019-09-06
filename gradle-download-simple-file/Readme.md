@@ -1,1 +1,1 @@
-Execute gradle publish
+Execute: gradle publish
