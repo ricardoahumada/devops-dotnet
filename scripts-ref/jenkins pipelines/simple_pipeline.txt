@@ -1,0 +1,41 @@
+pipeline {
+    agent any 
+
+    stages {
+        stage('Checkout external proj') {
+            agent any
+            steps {
+                git branch: 'master', credentialsId: '0b490341-b641-4857-b870-00bf6a6243db', url: 'https://bitbucket.org/ricardonetmind/unit-testing-using-mstest.git'
+                bat 'SET var=%cd%'
+                bat 'ECHO %var%'
+            }
+            
+        }
+        stage('Restore') {
+            agent any 
+            steps {
+                echo 'Restoring Assets...'
+                bat 'dotnet restore'
+            }
+        }
+        stage('Test') {
+            agent any
+            steps {
+                echo 'Testing stuff...'
+                bat 'dotnet test'
+            }
+        }
+        stage('Build') {
+            agent any
+            steps {
+                echo 'Building stuff...'
+                bat 'dotnet build'
+            }
+        }
+    }
+    post { 
+        always { 
+            cleanWs()
+        }
+    }
+}

@@ -1,0 +1,60 @@
+pipeline {
+    agent any 
+
+    environment {
+        PATH = "C:/Users/ricardo/.dotnet/tools;$PATH"
+    }
+  
+    stages {
+        stage('Checkout external proj') {
+            agent any
+            steps {
+                git branch: 'master', credentialsId: 'ricardonetmind', url: 'https://bitbucket.org/ricardonetmind/unit-testing-using-mstest.git'
+                bat 'SET var=%cd%'
+                bat 'ECHO %var%'
+            }
+            
+        }
+        stage('Restore') {
+            agent any 
+            steps {
+                echo 'Restoring Assets...'
+                bat 'dotnet restore'
+            }
+        }
+        stage('Test') {
+            agent any
+            steps {
+                echo 'Testing stuff...'
+                bat 'dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover'
+                bat 'dotnet build-server shutdown'
+            }
+        }
+        stage('Static analisys begin'){
+            agent any
+            steps{
+                echo 'Sonar begin...'
+                bat 'dotnet sonarscanner begin /k:"unit-testing-using-mstest" /d:sonar.login="9541fbbc26c3990295062cde31d9ef2cf7c115b2" /d:sonar.cs.opencover.reportsPaths="PrimeService.Tests/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Tests*.cs"'
+            }
+        }
+        stage('Build') {
+            agent any
+            steps {
+                echo 'Building stuff...'
+                bat 'dotnet build'
+            }
+        }
+        stage('Sonar scanner end'){
+            agent any
+            steps{
+                echo 'Sonar end...'
+                bat 'dotnet sonarscanner end /d:sonar.login="9541fbbc26c3990295062cde31d9ef2cf7c115b2"'
+            }
+        }
+    }
+    post { 
+        always { 
+            cleanWs()
+        }
+    }
+}

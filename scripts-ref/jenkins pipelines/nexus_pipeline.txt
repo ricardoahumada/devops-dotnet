@@ -1,0 +1,74 @@
+pipeline {
+    agent any 
+
+    environment {
+        PATH = "C:/Users/ricardo/.dotnet/tools;$PATH"
+    }
+  
+    stages {
+        stage('Checkout external proj') {
+            agent any
+            steps {
+                git branch: 'master', credentialsId: '0b490341-b641-4857-b870-00bf6a6243db', url: 'https://bitbucket.org/ricardonetmind/unit-testing-using-mstest.git'
+                bat 'SET var=%cd%'
+                bat 'ECHO %var%'
+            }
+            
+        }
+        stage('Restore') {
+            agent any 
+            steps {
+                echo 'Restoring Assets...'
+                bat 'dotnet restore'
+            }
+        }
+        stage('Test') {
+            agent any
+            steps {
+                echo 'Testing stuff...'
+                bat 'dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover'
+                bat 'dotnet build-server shutdown'
+            }
+        }
+        stage('Static analisys begin'){
+            agent any
+            steps{
+                echo 'Sonar begin...'
+                bat 'dotnet sonarscanner begin /k:"unit-testing-using-mstest" /d:sonar.login="905e340d617c583655df7e1f8ec0a65178b3e0ee" /d:sonar.cs.opencover.reportsPaths="PrimeService.Tests/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Tests*.cs"'
+            }
+        }
+        stage('Build') {
+            agent any
+            steps {
+                echo 'Building stuff...'
+                bat 'dotnet build'
+            }
+        }
+        stage('Sonar scanner end'){
+            agent any
+            steps{
+                echo 'Sonar end...'
+                bat 'dotnet sonarscanner end /d:sonar.login="905e340d617c583655df7e1f8ec0a65178b3e0ee"'
+            }
+        }
+	stage('Pack project'){
+            agent any
+            steps{
+                echo 'Packaging ...'
+                bat 'dotnet pack PrimeService/PrimeService.csproj -p:Build=true -p:PackageVersion=1.0.0 -p:NoDefaultExcludes=true -p:Configuration=Release -o package'
+            }
+        }
+	stage('Publish'){
+            agent any
+            steps{
+                echo 'Publisinh...'
+                bat 'dotnet nuget push --api-key def18931-1bc0-3d58-82e4-fc01ba538112 --source http://localhost:8081/repository/nuget-hosted/ PrimeService/package/PrimeService.1.0.0.nupkg'
+            }
+        }
+    }
+    post { 
+        always { 
+            cleanWs()
+        }
+    }
+}
