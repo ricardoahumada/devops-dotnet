@@ -5776,11 +5776,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Shared\\MyFiles\\Labs\\net\\unit-testing-using-nunit-gradle\\PrimeService.Tests\\PrimeService.Tests.csproj",
+      "projectUniqueName": "D:\\Shared\\MyFiles\\Labs\\dotnet\\unit-testing-using-nunit-gradle\\PrimeService.Tests\\PrimeService.Tests.csproj",
       "projectName": "PrimeService.Tests",
-      "projectPath": "D:\\Shared\\MyFiles\\Labs\\net\\unit-testing-using-nunit-gradle\\PrimeService.Tests\\PrimeService.Tests.csproj",
+      "projectPath": "D:\\Shared\\MyFiles\\Labs\\dotnet\\unit-testing-using-nunit-gradle\\PrimeService.Tests\\PrimeService.Tests.csproj",
       "packagesPath": "C:\\Users\\ricardo\\.nuget\\packages\\",
-      "outputPath": "D:\\Shared\\MyFiles\\Labs\\net\\unit-testing-using-nunit-gradle\\PrimeService.Tests\\obj\\",
+      "outputPath": "D:\\Shared\\MyFiles\\Labs\\dotnet\\unit-testing-using-nunit-gradle\\PrimeService.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5799,8 +5799,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\Shared\\MyFiles\\Labs\\net\\unit-testing-using-nunit-gradle\\PrimeService\\PrimeService.csproj": {
-              "projectPath": "D:\\Shared\\MyFiles\\Labs\\net\\unit-testing-using-nunit-gradle\\PrimeService\\PrimeService.csproj"
+            "D:\\Shared\\MyFiles\\Labs\\dotnet\\unit-testing-using-nunit-gradle\\PrimeService\\PrimeService.csproj": {
+              "projectPath": "D:\\Shared\\MyFiles\\Labs\\dotnet\\unit-testing-using-nunit-gradle\\PrimeService\\PrimeService.csproj"
             }
           }
         }

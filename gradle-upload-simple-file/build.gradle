@@ -1,0 +1,32 @@
+apply plugin: "base"
+apply plugin: "maven"
+apply plugin: "maven-publish"
+
+repositories {
+    maven {
+        url defaultRepository
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact source: 'src/uploadfile-1.0.0.zip', extension: 'zip'
+            groupId = 'netmind'
+            artifactId = 'uploadfile'
+            version = '1.0.0'
+
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username nexusUsername
+                password nexusPassword
+            }
+            url nexusRepo
+        }
+    }
+}
+
+publish.dependsOn build

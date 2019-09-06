@@ -34,3 +34,5 @@ D:\Shared\MyFiles\Labs\net\unit-testing-using-nunit-gradle\PrimeService.Tests\ob
 D:\Shared\MyFiles\Labs\net\unit-testing-using-nunit-gradle\PrimeService.Tests\obj\Debug\netcoreapp2.1\PrimeService.Tests.csproj.CopyComplete
 D:\Shared\MyFiles\Labs\net\unit-testing-using-nunit-gradle\PrimeService.Tests\obj\Debug\netcoreapp2.1\PrimeService.Tests.dll
 D:\Shared\MyFiles\Labs\net\unit-testing-using-nunit-gradle\PrimeService.Tests\obj\Debug\netcoreapp2.1\PrimeService.Tests.pdb
+D:\Shared\MyFiles\Labs\dotnet\unit-testing-using-nunit-gradle\PrimeService.Tests\obj\Debug\netcoreapp2.1\PrimeService.Tests.dll
+D:\Shared\MyFiles\Labs\dotnet\unit-testing-using-nunit-gradle\PrimeService.Tests\obj\Debug\netcoreapp2.1\PrimeService.Tests.pdb
