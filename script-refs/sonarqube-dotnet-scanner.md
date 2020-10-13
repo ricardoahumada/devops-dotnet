@@ -7,7 +7,7 @@ dotnet tool install --global dotnet-sonarscanner
 - dotnet sonarscanner end /d:sonar.login="&lt;token>"
 ## To generate In Sonarqube new token: user icon -> my account -> security
 
-#Test Covarage in .net projects
+# Test Covarage in .net projects
 ## Add Libraries in Test project
 - dotnet add package coverlet.msbuild --version 2.0.1
 - dotnet add package FluentAssertions --version 5.0.0
