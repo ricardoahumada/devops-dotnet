@@ -1,2 +1,3 @@
+# To Download
 - Execute: gradle clean copy
-### referenced artifact must exist in Nexus
+- Referenced artifact must exist in Nexus!
