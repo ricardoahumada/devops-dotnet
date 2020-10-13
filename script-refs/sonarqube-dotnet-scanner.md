@@ -4,7 +4,7 @@ dotnet tool install --global dotnet-sonarscanner
 # Scan project
 - dotnet sonarscanner begin /k:"<key>" /d:sonar.login="&lt;token>"
 - dotnet build unit-testing-using-dotnet-test.sln
-- dotnet sonarscanner end /d:sonar.login="<token>"
+- dotnet sonarscanner end /d:sonar.login="&lt;token>"
 ## To generate In Sonarqube new token: user icon -> my account -> security
 
 #Test Covarage in .net projects
@@ -15,6 +15,6 @@ dotnet tool install --global dotnet-sonarscanner
 # Scan with test coverage
 - dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 - dotnet build-server shutdown
-- dotnet sonarscanner begin /k:"<key>" /d:sonar.login="<token>" /d:sonar.cs.opencover.reportsPaths="<path_to_test_project>\coverage.opencover.xml" /d:sonar.coverage.exclusions="**Tests*.cs"
+- dotnet sonarscanner begin /k:"&lt;key>" /d:sonar.login="&lt;token>" /d:sonar.cs.opencover.reportsPaths="<path_to_test_project>\coverage.opencover.xml" /d:sonar.coverage.exclusions="**Tests*.cs"
 - dotnet build
-- dotnet sonarscanner end /d:sonar.login="<token>"
+- dotnet sonarscanner end /d:sonar.login="&lt;token>"
