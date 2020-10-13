@@ -2,7 +2,7 @@
 
 1. Create repository in Bitbucket
 2. Use git to clone, change, add, commit and push code in repo
-3. Create dotnet classlib project: [net-projects-with-tests.md](script-refs/net-projects-with-tests.md)
+3. Create dotnet classlib project: [net-projects-with-tests.md](script-refs/net-projects-with-tests/create-netprjects-w-tests.md)
 4. Add test project
 5. Create mvc project
 6. Add Functional Test project to MVC
