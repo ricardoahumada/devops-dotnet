@@ -25,5 +25,5 @@
 15. Publish any binary file to Nexus using Gradle and maven wrapper: [gradle-upload-simple-file](projects/gradle-upload-simple-file)
 16. Download any binary file from Nexus using Gradle: [gradle-download-simple-file](projects/gradle-download-simple-file)
 ***
-17. Generate a CI Pipeline for publishing C++ lib: [jenkins pipelines](script-refs/jenkins pipelines)
+17. Generate a CI Pipeline for publishing C++ lib: [jenkins pipelines](script-refs/jenkins%20pipelines)
 18. Generate a CI Pipeline for consuming C++ lib and publish C# package
