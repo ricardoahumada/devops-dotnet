@@ -35,12 +35,12 @@ dotnet add .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj package PrimeService -v 1.
 nuget spec {csproj-file}
 
 ## add in .nuspec the files (dll, lib, ) to add to package
-### <package>
+### &lt;package>
 ### ....
-### <files>
-### 	<file src="build\lib\main\release\*.*" target="lib\" />
-### </files>
-### </package> 
+### &lt;files>
+### 	&lt;file src="build\lib\main\release\*.*" target="lib\" />
+### &lt;/files>
+### &lt;/package> 
 
 ## Pack dll for previously compiled project using nspec
 dotnet pack {csproj-file} -p:NoBuild=true -p:PackageVersion=1.0.0 -p:NoDefaultExcludes=true -o publish
