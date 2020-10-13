@@ -13,7 +13,7 @@
 ***
 9. Install Jenkins and create freestyle tasks
 10. Integrate Jenkins and Bitbucket: [integration-bitbucket-jenkins.md](script-refs/integration-bitbucket-jenkins.md)
-11. Create CI Pipeline task: [jenkins pipelines](script-refs/jenkins pipelines)
+11. Create CI Pipeline task: [jenkins pipelines](script-refs/jenkins%20pipelines)
 ***
 11. Install and config Nexus
 10. Use Nuget for creating and publishing packages: [nuget-and-nexus.md](script-refs/nuget-and-nexus.md)
