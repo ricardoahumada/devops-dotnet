@@ -11,18 +11,18 @@ dotnet pack PrimeService\PrimeService.csproj -p:Build=true -p:PackageVersion=1.0
 
 # Publish package to Nexus
 ## Using dotnet
-dotnet nuget push {nupkg-name} -k {nexus-api-key} -s {repository-source-uri}
+dotnet nuget push &lt;nupkg-name> -k &lt;nexus_api_key> -s &lt;repository_source_uri>
 ## Using nuget
-nuget push -Source {NuGet package source URL} -ApiKey key {your_package}.nupkg
+nuget push -Source &lt;NuGet_package_source_URL> -ApiKey key &lt;your_package>.nupkg
 ## locate api-key in nexus: user icon -> menu -> Nuget API Key
 ### Example
-dotnet nuget push --api-key 1dc2630e-3648-3be0-8130-9b000a56eed3 --source http://localhost:8081/repository/nuget-hosted/ {package_dir}\PrimeService.1.0.0.nupkg
+dotnet nuget push --api-key &lt;API-key> --source http://localhost:8081/repository/nuget-hosted/ &lt;package_dir>\PrimeService.1.0.0.nupkg
 
 # Add repo source to nuget w/credentials
 ## Without storing credentials
-nuget sources add -name NuGetNexusHosted -source http://localhost:8081/repository/nuget-hosted/ -username {user_name} -password {password} 
+nuget sources add -name NuGetNexusHosted -source http://localhost:8081/repository/nuget-hosted/ -username &lt;user_name> -password &lt;password>
 ## Storing credentials: must create nuget.config first
-nuget sources add -name NuGetNexusHosted -source http://localhost:8081/repository/nuget-hosted/ -username {user_name} -password {password}  -StorePasswordInClearText -configfile ./nuget.config
+nuget sources add -name NuGetNexusHosted -source http://localhost:8081/repository/nuget-hosted/ -username &lt;user_name> -password &lt;password>  -StorePasswordInClearText -configfile ./nuget.config
 
 # List pakckages in repo
 nuget list -s NuGetNexusHosted -AllVersions
@@ -32,7 +32,7 @@ dotnet add .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj package PrimeService -v 1.
 
 # Packaging DLL/LIB/.. projects
 ## Create nuspec
-nuget spec {csproj-file}
+nuget spec &lt;csproj_file>
 
 ## add in .nuspec the files (dll, lib, ) to add to package
 ```xml
@@ -44,4 +44,4 @@ nuget spec {csproj-file}
 </package> 
 ```
 ## Pack dll for previously compiled project using nspec
-dotnet pack {csproj-file} -p:NoBuild=true -p:PackageVersion=1.0.0 -p:NoDefaultExcludes=true -o publish
+dotnet pack &lt;csproj_file> -p:NoBuild=true -p:PackageVersion=1.0.0 -p:NoDefaultExcludes=true -o publish
