@@ -20,14 +20,14 @@ dotnet new xunit -o .\PrimeService.Tests
 dotnet new nunit -o .\PrimeService.Tests
 
 # Add reference Main project in Test project
-cd PrimeService.Tests
-dotnet add reference ../PrimeService/PrimeService.csproj
+- cd PrimeService.Tests
+- dotnet add reference ../PrimeService/PrimeService.csproj
 ## Implement tests clases that test Main classes
 
 # Add test project to sln
 dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj
 
 # Launch test and build
-dotnet test
-dotnet build
+- dotnet test
+- dotnet build
 
