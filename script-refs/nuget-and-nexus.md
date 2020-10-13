@@ -1,6 +1,6 @@
 # Download nuget
-# https://www.nuget.org/downloads
-# Add to path
+- https://www.nuget.org/downloads
+- Add to path
 
 # Pack project
 ## Using nuget example
