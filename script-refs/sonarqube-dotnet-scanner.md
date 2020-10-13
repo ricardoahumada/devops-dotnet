@@ -2,7 +2,7 @@
 dotnet tool install --global dotnet-sonarscanner
 
 # Scan project
-- dotnet sonarscanner begin /k:"<key>" /d:sonar.login="<token>"
+- dotnet sonarscanner begin /k:"<key>" /d:sonar.login="&lt;token>"
 - dotnet build unit-testing-using-dotnet-test.sln
 - dotnet sonarscanner end /d:sonar.login="<token>"
 ## To generate In Sonarqube new token: user icon -> my account -> security
