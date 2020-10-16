@@ -22,6 +22,7 @@
 
 # Run project
 - cd .\src\HelloWorld.Mvc
+- dotnet dev-certs https (to generate dev cert)
 - dotnet run 
 
 # Publish
