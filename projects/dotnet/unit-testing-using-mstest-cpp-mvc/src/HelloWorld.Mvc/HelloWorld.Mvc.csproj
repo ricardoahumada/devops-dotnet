@@ -7,7 +7,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-    
+    <Reference Include="cpp-calculator">
+      <HintPath>./cpp/cpp-calculator.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

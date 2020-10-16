@@ -11,7 +11,6 @@ using Microsoft.Extensions.Logging;
 
 namespace HelloWorld.Mvc {
     public class Program {
-        // [DllImport ("my-cpp-libraries.dll")]
         [DllImport (@"./cpp/cpp-calculator.dll")]
         static public extern void UsingCalculator ();
 
