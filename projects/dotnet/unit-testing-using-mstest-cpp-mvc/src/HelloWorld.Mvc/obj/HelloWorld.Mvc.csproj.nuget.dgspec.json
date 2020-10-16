@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Shared\\MyFiles\\Labs\\devops-dotnet\\projects\\dotnet\\unit-testing-using-mstest-cpp-mvc\\src\\HelloWorld.Mvc\\HelloWorld.Mvc.csproj": {}
+  },
+  "projects": {
+    "D:\\Shared\\MyFiles\\Labs\\devops-dotnet\\projects\\dotnet\\unit-testing-using-mstest-cpp-mvc\\src\\HelloWorld.Mvc\\HelloWorld.Mvc.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Shared\\MyFiles\\Labs\\devops-dotnet\\projects\\dotnet\\unit-testing-using-mstest-cpp-mvc\\src\\HelloWorld.Mvc\\HelloWorld.Mvc.csproj",
+        "projectName": "HelloWorld.Mvc",
+        "projectPath": "D:\\Shared\\MyFiles\\Labs\\devops-dotnet\\projects\\dotnet\\unit-testing-using-mstest-cpp-mvc\\src\\HelloWorld.Mvc\\HelloWorld.Mvc.csproj",
+        "packagesPath": "C:\\Users\\ricardo\\.nuget\\packages\\",
+        "outputPath": "D:\\Shared\\MyFiles\\Labs\\devops-dotnet\\projects\\dotnet\\unit-testing-using-mstest-cpp-mvc\\src\\HelloWorld.Mvc\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ricardo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "http://localhost:8081/repository/nuget-hosted/": {},
+          "http://localhost:8081/repository/nuget.org-proxy/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
