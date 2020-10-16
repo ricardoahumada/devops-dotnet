@@ -8,7 +8,7 @@
 - dotnet new xunit -o .\tests\HelloWorld.FunctionalTests
 
 # Add projects to solution
-- dotnet sln add .\src\HelloWorld.Mvc\HelloWorld.Mvc.cs
+- dotnet sln add .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj
 - dotnet sln add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj
 
 # Reference the Main from Test
