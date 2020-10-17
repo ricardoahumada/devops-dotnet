@@ -14,9 +14,12 @@ dotnet pack PrimeService\PrimeService.csproj -p:Build=true -p:PackageVersion=1.0
 dotnet nuget push &lt;nupkg-name> -k &lt;nexus_api_key> -s &lt;repository_source_uri>
 ## Using nuget
 nuget push -Source &lt;NuGet_package_source_URL> -ApiKey key &lt;your_package>.nupkg
-## locate api-key in nexus: user icon -> menu -> Nuget API Key
+### Locate api-key in nexus: user icon -> menu -> Nuget API Key
 ### Example
-dotnet nuget push --api-key &lt;API-key> --source http://localhost:8081/repository/nuget-hosted/ &lt;package_dir>\PrimeService.1.0.0.nupkg
+- dotnet nuget push --api-key &lt;API-key> --source http://localhost:8081/repository/nuget-hosted/ &lt;package_dir>\PrimeService.1.0.0.nupkg
+### Register Api key for a given repository with the following command:
+- nuget setapikey &lt;API-key> -source http://localhost:8081/repository/{repository name}/
+
 
 # Add repo source to nuget w/credentials
 ## Without storing credentials
