@@ -12,7 +12,7 @@ dotnet new classlib -o .\PrimeService
 dotnet sln add PrimeService/PrimeService.csproj
 
 # Add Test project depending on test lib
-## mstes
+## mstest
 dotnet new mstest -o .\PrimeService.Tests
 ## xunit
 dotnet new xunit -o .\PrimeService.Tests
