@@ -22,8 +22,8 @@
 13. Pack and publish C++ project as Nuget package: [nuget-and-nexus.md](script-refs/nuget-and-nexus.md)
 14. Integrate C++ package in C# project: [net-projects-with-tests](script-refs/net-projects-with-tests)
 ***
-15. Publish any binary file to Nexus using Gradle and maven wrapper: [gradle-upload-simple-file](projects/gradle-upload-simple-file)
-16. Download any binary file from Nexus using Gradle: [gradle-download-simple-file](projects/gradle-download-simple-file)
+15. Publish any binary file to Nexus using Gradle and maven wrapper: [gradle-upload-simple-file](projects/gradle/gradle-upload-simple-file)
+16. Download any binary file from Nexus using Gradle: [gradle-download-simple-file](projects/gradle/gradle-download-simple-file)
 ***
 17. Generate a CI Pipeline for publishing C++ lib: [jenkins pipelines](script-refs/jenkins%20pipelines)
 18. Generate a CI Pipeline for consuming C++ lib and publish C# package
