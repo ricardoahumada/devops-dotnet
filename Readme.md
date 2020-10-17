@@ -18,7 +18,7 @@
 11. Install and config Nexus: [nexus.md](script-refs/nexus.md)
 10. Use Nuget for creating and publishing packages: [nuget-and-nexus.md](script-refs/nuget-and-nexus.md)
 ***
-12. Build a C++ project using Gradle: [cpp-lib-dep-proj](projects/cpp-lib-dep-proj)
+12. Build a C++ project using Gradle: [cpp](projects/cpp)
 13. Pack and publish C++ project as Nuget package: [nuget-and-nexus.md](script-refs/nuget-and-nexus.md)
 14. Integrate C++ package in C# project: [net-projects-with-tests](script-refs/net-projects-with-tests)
 ***
