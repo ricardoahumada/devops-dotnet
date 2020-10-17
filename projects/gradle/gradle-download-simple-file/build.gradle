@@ -3,8 +3,8 @@ apply plugin: "java"
     maven {
         url "http://localhost:8081/repository/maven-public/"
         credentials {
-            username = 'ricardo'
-            password = 'izaskun7'
+            username = '<username>'
+            password = '<password>'
         }
     }
 }
