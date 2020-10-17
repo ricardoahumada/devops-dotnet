@@ -25,19 +25,20 @@ nuget push -Source &lt;NuGet_package_source_URL> -ApiKey key &lt;your_package>.n
 
 # Add repo source to nuget w/credentials
 ## Without storing credentials
-nuget sources add -name NuGetNexusHosted -source http://localhost:8081/repository/nuget-hosted/ -username &lt;user_name> -password &lt;password>
+- nuget sources add -name NuGetNexusHosted -source http://localhost:8081/repository/nuget-hosted/ -username &lt;user_name> -password &lt;password>
 ## Storing credentials: must create nuget.config first
-nuget sources add -name NuGetNexusHosted -source http://localhost:8081/repository/nuget-hosted/ -username &lt;user_name> -password &lt;password>  -StorePasswordInClearText -configfile ./nuget.config
+- nuget sources add -name NuGetNexusHosted -source http://localhost:8081/repository/nuget-hosted/ -username &lt;user_name> -password &lt;password>  -StorePasswordInClearText -configfile ./nuget.config
 
 # List pakckages in repo
-nuget list -s NuGetNexusHosted -AllVersions
+- nuget list -s http://localhost:8081/repository/{repository name}/ -AllVersions
+- nuget list -s &lt;repo_name> -AllVersions
 
 # User package to add to project example
-dotnet add .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj package PrimeService -v 1.0.0
+- dotnet add .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj package PrimeService -v 1.0.0
 
 # Packaging DLL/LIB/.. projects
 ## Create nuspec
-nuget spec &lt;csproj_file>
+- nuget spec &lt;csproj_file>
 
 ## add in .nuspec the files (dll, lib, ) to add to package
 ```xml
@@ -49,4 +50,4 @@ nuget spec &lt;csproj_file>
 </package> 
 ```
 ## Pack dll for previously compiled project using nspec
-dotnet pack &lt;csproj_file> -p:NoBuild=true -p:PackageVersion=1.0.0 -p:NoDefaultExcludes=true -o publish
+- dotnet pack &lt;csproj_file> -p:NoBuild=true -p:PackageVersion=1.0.0 -p:NoDefaultExcludes=true -o publish
