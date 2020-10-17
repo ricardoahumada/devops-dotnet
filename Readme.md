@@ -15,7 +15,7 @@
 10. Integrate Jenkins and Bitbucket: [integration-bitbucket-jenkins.md](script-refs/integration-bitbucket-jenkins.md)
 11. Create CI Pipeline task: [jenkins pipelines](script-refs/jenkins%20pipelines)
 ***
-11. Install and config Nexus
+11. Install and config Nexus: [nexus.md](nexus.md)
 10. Use Nuget for creating and publishing packages: [nuget-and-nexus.md](script-refs/nuget-and-nexus.md)
 ***
 12. Build a C++ project using Gradle: [cpp-lib-dep-proj](projects/cpp-lib-dep-proj)
