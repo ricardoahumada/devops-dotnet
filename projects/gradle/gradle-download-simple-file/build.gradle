@@ -13,7 +13,7 @@ configurations {
 }
 
 dependencies {
-    # GroupId:ArtifactId:Version@format
+    // GroupId:ArtifactId:Version@format
     zips "netmind:uploadfile:1.0.0@zip"
 }
 
