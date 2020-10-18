@@ -1,0 +1,32 @@
+apply plugin: "base"
+apply plugin: "maven"
+apply plugin: "maven-publish"
+
+repositories {
+    maven {
+        url defaultRepository
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact source: '../cpp-calculator/build/lib/main/release/cpp-calculator.dll', extension: 'dll'
+            groupId = 'netmind'
+            artifactId = 'cpp-calculator'
+            version = '1.0.2'
+
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username nexusUsername
+                password nexusPassword
+            }
+            url nexusRepo
+        }
+    }
+}
+
+publish.dependsOn build
