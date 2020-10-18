@@ -37,6 +37,8 @@ nuget push -Source &lt;NuGet_package_source_URL> -ApiKey key &lt;your_package>.n
 - dotnet add .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj package PrimeService -v 1.0.0
 
 # Packaging DLL/LIB/.. projects
+## Create lib project
+- dotnet new classlib
 ## Create nuspec
 - nuget spec &lt;csproj_file>
 
