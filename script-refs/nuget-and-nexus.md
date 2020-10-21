@@ -4,16 +4,16 @@
 
 # Pack project
 ## Using nuget example
-nuget pack PrimeService\PrimeService.csproj -Build -Properties Configuration=Release -Version 1.0.0 -OutputDirectory package
+- nuget pack PrimeService\PrimeService.csproj -Build -Properties Configuration=Release -Version 1.0.0 -OutputDirectory package
 ## Using dotnet example
-dotnet pack PrimeService\PrimeService.csproj -p:Build=true -p:PackageVersion=1.0.0 -p:NoDefaultExcludes=true -p:Configuration=Release -o package
+- dotnet pack PrimeService\PrimeService.csproj -p:Build=true -p:PackageVersion=1.0.0 -p:NoDefaultExcludes=true -p:Configuration=Release -o package
 
 
 # Publish package to Nexus
 ## Using dotnet
-dotnet nuget push &lt;nupkg-name> -k &lt;nexus_api_key> -s &lt;repository_source_uri>
+- dotnet nuget push &lt;nupkg-name> -k &lt;nexus_api_key> -s &lt;repository_source_uri>
 ## Using nuget
-nuget push -Source &lt;NuGet_package_source_URL> -ApiKey key &lt;your_package>.nupkg
+- nuget push -Source &lt;NuGet_package_source_URL> -ApiKey key &lt;your_package>.nupkg
 #### Locate api-key in nexus: 
 - user icon -> menu -> Nuget API Key
 - Ensure NuGet API-Key Realm is added to the user/role
