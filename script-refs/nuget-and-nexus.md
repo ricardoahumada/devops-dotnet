@@ -49,7 +49,6 @@
 # Restoring dependencies to project
 ## Using nuget example
 - nuget restore
-- (needs nuget config file)
 ## Using dotnet example
 - dotnet restore
 
