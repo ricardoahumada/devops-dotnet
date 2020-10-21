@@ -14,4 +14,6 @@
 
 # Add using proxy
 - Analyse nuget.org-proxy
+- nuget sources add -name &lt;Source-name-i-want-to-use> -source http://localhost:8081/repository/nuget.org-proxy/ -username <user_name> -password <password>
 - dotnet add .\PrimeService\PrimeService.csproj package log4net --source http://localhost:8081/repository/nuget.org-proxy/
+- dotnet add .\PrimeService\PrimeService.csproj package log4net --source  &lt;Source-name-i-want-to-use>
