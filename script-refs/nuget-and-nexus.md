@@ -2,6 +2,7 @@
 - https://www.nuget.org/downloads
 - Add to path
 
+
 # Pack project
 ## Using nuget example
 - nuget pack PrimeService\PrimeService.csproj -Build -Properties Configuration=Release -Version 1.0.0 -OutputDirectory package
@@ -33,8 +34,25 @@
 - nuget list -s http://localhost:8081/repository/{repository name}/ -AllVersions
 - nuget list -s &lt;repo_name> -AllVersions
 
-# User package to add to project example
+
+# Adding dependencies to project
+## Using nuget example
+- nuget install log4net
+- (don't alter csproj)
+## Using dotnet example
+- dotnet add &lt;.csproj_file> package &lt;package-name> -v &lt;version>
+
+### Example
+- dotnet add .\PrimeService\PrimeService.csproj package log4net
 - dotnet add .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj package PrimeService -v 1.0.0
+
+# Restoring dependencies to project
+## Using nuget example
+- nuget restore
+- (needs nuget config file)
+## Using dotnet example
+- dotnet restore
+
 
 # Packaging DLL/LIB/.. projects
 ## Create lib project
