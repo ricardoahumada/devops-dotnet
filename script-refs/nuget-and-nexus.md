@@ -22,6 +22,8 @@
 - dotnet nuget push --api-key &lt;API-key> --source http://localhost:8081/repository/nuget-hosted/ &lt;package_dir>\PrimeService.1.0.0.nupkg
 #### Register Api key for a given repository with the following command:
 - nuget setapikey &lt;API-key> -source http://localhost:8081/repository/{repository name}/
+### To definie package specifications - metadata: .nuspec file
+- nuget spec <csproj_file>
 
 
 # Add repo source to nuget w/credentials
