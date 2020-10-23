@@ -6,6 +6,7 @@
 # Pack project
 ## Using nuget example
 - nuget pack PrimeService\PrimeService.csproj -Build -Properties Configuration=Release -Version 1.0.0 -OutputDirectory package
+- nuget spec <csproj_file> (to specify metadata)
 ## Using dotnet example
 - dotnet pack PrimeService\PrimeService.csproj -p:Build=true -p:PackageVersion=1.0.0 -p:NoDefaultExcludes=true -p:Configuration=Release -o package
 
