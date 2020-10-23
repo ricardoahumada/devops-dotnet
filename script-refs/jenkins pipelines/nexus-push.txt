@@ -1,0 +1,59 @@
+pipeline {
+    agent any 
+
+    environment {
+        PATH = "C:/DevOpsTools/tools/nuget;$PATH"
+    }
+
+    stages {
+        stage('Checkout external proj') {
+            agent any
+            steps {
+                git branch: 'master', credentialsId: 'prime-app-cred', url: 'https://bitbucket.org/ricardonetmind/prime-app.git'
+                bat 'SET var=%cd%'
+                bat 'ECHO %var%'
+            }
+            
+        }
+        stage('Restore') {
+            agent any 
+            steps {
+                echo 'Restoring Assets...'
+                bat 'dotnet restore'
+            }
+        }
+        stage('Test') {
+            agent any
+            steps {
+                echo 'Testing stuff...'
+                bat 'dotnet test'
+            }
+        }
+        stage('Build') {
+            agent any
+            steps {
+                echo 'Building stuff...'
+                bat 'dotnet build'
+            }
+        }
+        stage('Packaging') {
+            agent any
+            steps {
+                echo 'Packing stuff...'
+                bat 'nuget pack PrimeService/PrimeService.csproj -OutputDirectory package'
+            }
+        }
+        stage('Pushing') {
+            agent any
+            steps {
+                echo 'pushing stuff into nexus...'
+                bat 'dotnet nuget push package/PrimeService.0.0.3.nupkg -k "9c65dae8-53b9-3f41-9e0a-40a60b930d16" -s "http://localhost:8081/repository/nuget-hosted/"'
+            }
+        }
+    }
+    post { 
+        always { 
+            cleanWs()
+        }
+    }
+}
