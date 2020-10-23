@@ -1,0 +1,27 @@
+task HolaMundo{
+	ext{
+		nombre='pepito'
+		mail='pep@p.com'
+		version="1.0"
+	}
+}
+
+task compilar {
+	doLast {
+		println 'Estoy compilando...'
+		println 'Compilando proyecto' + HolaMundo.nombre+' ' + HolaMundo.version
+		println 'Si hay problemas, avisar a ' + HolaMundo.mail
+	}
+}
+
+task pruebasUnitarias {
+	doLast {
+		println 'Estoy lanzando pruebas unitarias...'
+	}
+}
+
+task empaquetar {
+	doLast {
+		println 'creando un zip...'
+	}
+}
