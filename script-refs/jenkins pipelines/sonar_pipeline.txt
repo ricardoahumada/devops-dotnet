@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout external proj') {
             agent any
             steps {
-                git branch: 'master', credentialsId: 'ricardonetmind', url: 'https://bitbucket.org/ricardonetmind/unit-testing-using-mstest.git'
+                git branch: 'master', credentialsId: '<bitbucket-credentials>', url: '<bitbucket-repo-url>'
                 bat 'SET var=%cd%'
                 bat 'ECHO %var%'
             }
@@ -34,7 +34,7 @@ pipeline {
             agent any
             steps{
                 echo 'Sonar begin...'
-                bat 'dotnet sonarscanner begin /k:"unit-testing-using-mstest" /d:sonar.login="9541fbbc26c3990295062cde31d9ef2cf7c115b2" /d:sonar.cs.opencover.reportsPaths="PrimeService.Tests/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Tests*.cs"'
+                bat 'dotnet sonarscanner begin /k:"<sonar-project-name>" /d:sonar.login="<sonar-key>" /d:sonar.cs.opencover.reportsPaths="<path-to-test-project>/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Tests*.cs"'
             }
         }
         stage('Build') {
@@ -48,7 +48,7 @@ pipeline {
             agent any
             steps{
                 echo 'Sonar end...'
-                bat 'dotnet sonarscanner end /d:sonar.login="9541fbbc26c3990295062cde31d9ef2cf7c115b2"'
+                bat 'dotnet sonarscanner end /d:sonar.login="<sonar-key>"'
             }
         }
     }

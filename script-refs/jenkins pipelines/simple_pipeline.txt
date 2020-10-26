@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout external proj') {
             agent any
             steps {
-                git branch: 'master', credentialsId: '0b490341-b641-4857-b870-00bf6a6243db', url: 'https://bitbucket.org/ricardonetmind/unit-testing-using-mstest.git'
+                git branch: 'master', credentialsId: '<bitbucket-credentials>', url: '<bitbucket-repo-url>'
                 bat 'SET var=%cd%'
                 bat 'ECHO %var%'
             }

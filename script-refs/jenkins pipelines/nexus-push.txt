@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout external proj') {
             agent any
             steps {
-                git branch: 'master', credentialsId: 'prime-app-cred', url: 'https://bitbucket.org/ricardonetmind/prime-app.git'
+                git branch: 'master', credentialsId: '<bitbucket-credentials>', url: '<bitbucket-repo-url>'
                 bat 'SET var=%cd%'
                 bat 'ECHO %var%'
             }
@@ -36,18 +36,18 @@ pipeline {
                 bat 'dotnet build'
             }
         }
-        stage('Packaging') {
+        stage('Packing') {
             agent any
             steps {
                 echo 'Packing stuff...'
-                bat 'nuget pack PrimeService/PrimeService.csproj -OutputDirectory package'
+                bat 'nuget pack <path-to-csproj> -OutputDirectory package'
             }
         }
         stage('Pushing') {
             agent any
             steps {
                 echo 'pushing stuff into nexus...'
-                bat 'dotnet nuget push package/PrimeService.0.0.3.nupkg -k "9c65dae8-53b9-3f41-9e0a-40a60b930d16" -s "http://localhost:8081/repository/nuget-hosted/"'
+                bat 'dotnet nuget push package/PrimeService.0.0.3.nupkg -k "<nexus-api-key>" -s "<repo-url or source-name>"'
             }
         }
     }

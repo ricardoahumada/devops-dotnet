@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout external proj') {
             agent any
             steps {
-                git branch: 'master', credentialsId: 'prime-app-cred', url: 'https://bitbucket.org/ricardonetmind/prime-app.git'
+                git branch: 'master', credentialsId: '<bitbucket-credentials>', url: '<bitbucket-repo-url>'
                 bat 'SET var=%cd%'
                 bat 'ECHO %var%'
             }
@@ -40,7 +40,7 @@ pipeline {
             agent any
             steps {
                 echo 'Packing stuff...'
-                bat 'nuget pack PrimeService/PrimeService.csproj -OutputDirectory package'
+                bat 'nuget pack <path-to-csproj> -OutputDirectory package'
             }
         }
     }
