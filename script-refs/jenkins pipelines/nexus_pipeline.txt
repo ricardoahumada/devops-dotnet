@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout external proj') {
             agent any
             steps {
-                git branch: 'master', credentialsId: '0b490341-b641-4857-b870-00bf6a6243db', url: 'https://bitbucket.org/ricardonetmind/unit-testing-using-mstest.git'
+                git branch: 'master', credentialsId: '<bitbucket-credential>', url: '<bitbucket-repo-url>'
                 bat 'SET var=%cd%'
                 bat 'ECHO %var%'
             }
@@ -34,7 +34,7 @@ pipeline {
             agent any
             steps{
                 echo 'Sonar begin...'
-                bat 'dotnet sonarscanner begin /k:"unit-testing-using-mstest" /d:sonar.login="905e340d617c583655df7e1f8ec0a65178b3e0ee" /d:sonar.cs.opencover.reportsPaths="PrimeService.Tests/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Tests*.cs"'
+                bat 'dotnet sonarscanner begin /k:"<project-name>" /d:sonar.login="<sonarq-api-key>" /d:sonar.cs.opencover.reportsPaths="<path-to-test-project>/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Tests*.cs"'
             }
         }
         stage('Build') {
@@ -48,21 +48,21 @@ pipeline {
             agent any
             steps{
                 echo 'Sonar end...'
-                bat 'dotnet sonarscanner end /d:sonar.login="905e340d617c583655df7e1f8ec0a65178b3e0ee"'
+                bat 'dotnet sonarscanner end /d:sonar.login="<sonarq-api-key>"'
             }
         }
 	stage('Pack project'){
             agent any
             steps{
                 echo 'Packaging ...'
-                bat 'dotnet pack PrimeService/PrimeService.csproj -p:Build=true -p:PackageVersion=1.0.0 -p:NoDefaultExcludes=true -p:Configuration=Release -o package'
+                bat 'dotnet pack <path-to-csproj> -p:Build=true -p:NoDefaultExcludes=true -p:Configuration=Release -o package'
             }
         }
 	stage('Publish'){
             agent any
             steps{
                 echo 'Publisinh...'
-                bat 'dotnet nuget push --api-key def18931-1bc0-3d58-82e4-fc01ba538112 --source http://localhost:8081/repository/nuget-hosted/ PrimeService/package/PrimeService.1.0.0.nupkg'
+                bat 'dotnet nuget push --api-key "<nexus-api-key>" --source <nexus-repo-path or source-name> PrimeService/package/*.nupkg'
             }
         }
     }
